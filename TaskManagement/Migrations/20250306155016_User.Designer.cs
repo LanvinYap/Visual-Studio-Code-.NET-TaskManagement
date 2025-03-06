@@ -11,8 +11,8 @@ using TaskManagement.Data;
 namespace TaskManagement.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250306131753_AddUserToTask")]
-    partial class AddUserToTask
+    [Migration("20250306155016_User")]
+    partial class User
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
