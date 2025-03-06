@@ -1,6 +1,6 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using TaskManagement.Data;
 using TaskManagement.Models;
 
@@ -8,55 +8,58 @@ namespace TaskManagement.Pages
 {
     public class EditTaskModel : PageModel
     {
-        public readonly AppDbContext _context;
+        private readonly AppDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public EditTaskModel(AppDbContext context)
+        public EditTaskModel(AppDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [BindProperty]
-        public TaskItem Task { get; set; } = new();
+        public TaskItem Task { get; set; } = new TaskItem();
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
+            var userId = _userManager.GetUserId(User);
             var task = await _context.Tasks.FindAsync(id);
-            if (task == null)
-            {
-                return NotFound();
-            }
 
+            if (task == null || task.UserId != userId)
+            {
+                return NotFound(); // Prevents unauthorized editing
+            }
             Task = task;
+
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
+            var userId = _userManager.GetUserId(User);
+
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.Attach(Task).State = EntityState.Modified;
+            // Find the original task in the database
+            var existingTask = await _context.Tasks.FindAsync(Task.Id);
 
-            try
+            if (existingTask == null || existingTask.UserId != userId)
             {
-                await _context.SaveChangesAsync();
+                return NotFound(); // Prevent unauthorized updates
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TaskExists(Task.Id))
-                {
-                    return NotFound();
-                }
-                throw;
-            }
+
+            // Update only relevant fields while keeping UserId
+            existingTask.Title = Task.Title;
+            existingTask.Description = Task.Description;
+            existingTask.DueDate = Task.DueDate;
+            existingTask.IsCompleted = Task.IsCompleted;
+
+            await _context.SaveChangesAsync();
+
             return RedirectToPage("/TaskList");
-        }
-
-        private bool TaskExists(int id)
-        {
-            return _context.Tasks.Any(e => e.Id == id);
         }
     }
 }

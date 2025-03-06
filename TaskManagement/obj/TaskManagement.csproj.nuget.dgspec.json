@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\Taskmanagement\\TaskManagement.csproj": {}
+    "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\TaskManagement\\TaskManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\Taskmanagement\\TaskManagement.csproj": {
+    "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\TaskManagement\\TaskManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\Taskmanagement\\TaskManagement.csproj",
+        "projectUniqueName": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\TaskManagement\\TaskManagement.csproj",
         "projectName": "TaskManagement",
-        "projectPath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\Taskmanagement\\TaskManagement.csproj",
+        "projectPath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\TaskManagement\\TaskManagement.csproj",
         "packagesPath": "C:\\Users\\narut\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\Taskmanagement\\obj\\",
+        "outputPath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\TaskManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\narut\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -55,6 +63,10 @@
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[9.0.2, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             }
           },
           "imports": [

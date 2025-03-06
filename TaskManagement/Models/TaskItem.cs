@@ -15,5 +15,8 @@ namespace TaskManagement.Models
         public bool IsCompleted { get; set; } = false;
 
         public DateTime DueDate { get; set; } = DateTime.UtcNow;
+
+        // Associate task with a user
+        public string UserId { get; set; } = string.Empty;
     }
 }

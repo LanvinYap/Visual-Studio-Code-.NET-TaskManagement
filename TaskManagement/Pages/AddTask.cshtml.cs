@@ -1,31 +1,37 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using TaskManagement.Data;
 using TaskManagement.Models;
 
-namespace TaskMangement.Pages
+namespace TaskManagement.Pages
 {
     public class AddTaskModel : PageModel
     {
         private readonly AppDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public AddTaskModel(AppDbContext context)
+        public AddTaskModel(AppDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [BindProperty]
-        public TaskItem Task { get; set; } = new();
+        public TaskItem Task { get; set; } = new TaskItem();
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
+            var user = _userManager.GetUserId(User); // Get the logged-in user's ID
+            if (user == null)
             {
-                return Page();
+                return RedirectToPage("/Account/Login");
             }
 
+            Task.UserId = user; // Assign the task to the logged-in user
+
             _context.Tasks.Add(Task);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
 
             return RedirectToPage("/TaskList");
         }

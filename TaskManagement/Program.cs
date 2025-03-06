@@ -1,24 +1,24 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TaskManagement.Data;
-using TaskManagement.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder
+    .Services
+    .AddDbContext<AppDbContext>(
+        options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+    );
 
-// Configure Entity Framework Core with SQLite (using `appsettings.json`)
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionString));
+// Enable Identity
+builder
+    .Services
+    .AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<AppDbContext>();
 
 var app = builder.Build();
-
-// Apply migrations automatically on startup
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    dbContext.Database.Migrate(); // Ensure database is created and migrated
-}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -32,8 +32,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Enable authentication & authorization
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
 app.Run();
