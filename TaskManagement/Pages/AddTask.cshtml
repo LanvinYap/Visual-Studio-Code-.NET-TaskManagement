@@ -1,0 +1,26 @@
+﻿@page
+@model TaskMangement.Pages.AddTaskModel
+@{
+    ViewData["Title"] = "Add Task";
+}
+
+<h2>Add New Task</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" class="form-control" asp-for="Task.Title" required>
+    </div>
+    
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea class="form-control" asp-for="Task.Description"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Due Date</label>
+        <input type="date" class="form-control" asp-for="Task.DueDate" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Task</button>
+</form>
