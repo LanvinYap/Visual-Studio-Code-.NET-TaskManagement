@@ -36,5 +36,15 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Redirect root ("/") to TaskList
+app.MapGet(
+    "/",
+    context =>
+    {
+        context.Response.Redirect("/TaskList");
+        return Task.CompletedTask;
+    }
+);
+
 app.MapRazorPages();
 app.Run();
