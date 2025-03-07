@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XfrWH8AUQFw=",
+  "dgSpecHash": "v+i2NXhk8Ss=",
   "success": true,
-  "projectFilePath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\TaskManagement\\TaskManagement.csproj",
+  "projectFilePath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement - Copy\\TaskManagement\\TaskManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\narut\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\narut\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

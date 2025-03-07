@@ -6951,11 +6951,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\Taskmanagement\\TaskManagement.csproj",
+      "projectUniqueName": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement - Copy\\TaskManagement\\TaskManagement.csproj",
       "projectName": "TaskManagement",
-      "projectPath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\Taskmanagement\\TaskManagement.csproj",
+      "projectPath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement - Copy\\TaskManagement\\TaskManagement.csproj",
       "packagesPath": "C:\\Users\\narut\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\Taskmanagement\\obj\\",
+      "outputPath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement - Copy\\TaskManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\narut\\AppData\\Roaming\\NuGet\\NuGet.Config",
