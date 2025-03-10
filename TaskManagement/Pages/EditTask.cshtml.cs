@@ -55,7 +55,7 @@ namespace TaskManagement.Pages
             existingTask.Title = Task.Title;
             existingTask.Description = Task.Description;
             existingTask.DueDate = Task.DueDate;
-            existingTask.IsCompleted = Task.IsCompleted;
+            existingTask.Status = Task.Status; // ✅ Automatically sets completion based on status
 
             await _context.SaveChangesAsync();
 

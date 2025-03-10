@@ -3,6 +3,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TaskManagement.Models
 {
+    public enum TaskStatus
+    {
+        Pending, // 🕒
+        InProgress, // ⏳
+        Completed // ✅
+    }
+
     public class TaskItem
     {
         public int Id { get; set; }
@@ -12,11 +19,11 @@ namespace TaskManagement.Models
 
         public string? Description { get; set; }
 
-        public bool IsCompleted { get; set; } = false;
-
         public DateTime DueDate { get; set; } = DateTime.UtcNow;
 
-        // Associate task with a user
         public string UserId { get; set; } = string.Empty;
+
+        // Change from bool IsCompleted to TaskStatus
+        public TaskStatus Status { get; set; } = TaskStatus.Pending; // Default to Pending
     }
 }

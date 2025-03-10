@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\TaskManagement\\TaskManagement.csproj": {}
+    "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement - Copy\\TaskManagement\\TaskManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\TaskManagement\\TaskManagement.csproj": {
+    "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement - Copy\\TaskManagement\\TaskManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\TaskManagement\\TaskManagement.csproj",
+        "projectUniqueName": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement - Copy\\TaskManagement\\TaskManagement.csproj",
         "projectName": "TaskManagement",
-        "projectPath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\TaskManagement\\TaskManagement.csproj",
+        "projectPath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement - Copy\\TaskManagement\\TaskManagement.csproj",
         "packagesPath": "C:\\Users\\narut\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement\\TaskManagement\\obj\\",
+        "outputPath": "C:\\Users\\narut\\OneDrive\\文档\\Visual Studio Code (.NET) TaskManagement - Copy\\TaskManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\narut\\AppData\\Roaming\\NuGet\\NuGet.Config",
